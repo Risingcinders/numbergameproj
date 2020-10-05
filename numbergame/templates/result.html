@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>In Response</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h3>Submitted Info</h3>
+            <p>Name: {{ name_on_template }}</p>
+            <p>Location: {{ location }}</p>
+            <p>Favorite Language: {{favlang}}</p>
+            <p>Comment: {{comment}}</p>
+            <p>Snack: {{choicesnack}}</p>
+            <p>Pets:  {{pets}}</p>
+            
+
+        </div>
+
+        {# <img src="{% static 'img/my_img.png' %}" /> #}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+:root {
+    --primarytext: #e67025;
+    --secondarytext: #25d9e6;
+    --primarybackground: #4b4b4b;
+}
+
+* {
+    /* outline: 1px dotted red; */
+    margin: 0px;
+    padding: 0px;
+    color: var(--primarytext);
+    font-family: sans-serif;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    border: solid 5px var(--primarybackground);
+    margin: 20px;
+}
+
+#wrapper {
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback {
+    height: 200px;
+    width: 200px;
+}
+
+.wrong {
+    color: white;
+    background-color: red;
+}
+
+.right {
+    color: white;
+    background-color: green;
+}

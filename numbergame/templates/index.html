@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Look at the Time!</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Welcome to the game of number guessing</h1>
+            <h5>You get 5 attempts to guess the number between 1 and 100.</h5>
+            {% if low is True %}
+            <div class = 'feedback wrong'>That's too low</div>
+            {% endif %}
+            {% if high is True %}
+            <div class = 'feedback wrong'>That's too high</div>
+            {% endif %}
+            {% if correct is True %}
+            <div class = 'feedback right'>That's right
+                <a href="/destroy_session">Play Again</a>
+            </div>
+            {% endif %}
+            <form action="/" method="POST">
+                {% csrf_token %}
+                <input type="number" step='1' name="guess" />
+                <button type="submit">Submit Guess!</button>
+            </form>
+            {% if lose is True %}
+            <div class = 'loser'>You've gone over 5 guesses!</div>
+            {% endif %}
+            <p>previous guess: {{guess}}</p>
+            <p>number of attempts: {{count}}</p>
+        </div>
+        {# <img src="{% static 'img/my_img.png' %}" /> #}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>
